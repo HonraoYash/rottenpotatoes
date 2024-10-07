@@ -14,22 +14,114 @@
  *= require_self
  */
  table {
-    width: 100%;
+    width: 90%;
     border-collapse: collapse;
     margin-bottom: 20px;
+    margin-left: 70px;
+    margin-top: 40px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    background-color: #ffffff; 
   }
   
   th, td {
-    border: 1px solid #ddd;
+    border: 1px solid #1715c0;
     padding: 8px;
     text-align: left;
+    vertical-align: middle;
   }
   
   th {
     background-color: #f4f4f4;
+    color: #007bff;
+    font-weight: bold;
+    font-size: 1.1em;
+  }
+
+  td {
+    font-size: 1em; 
   }
   
   td a {
     margin-right: 10px;
+    color: #007bff;
+    text-decoration: none;
   }
   
+  td a:hover {
+    text-decoration: underline;
+  }
+
+  body {
+    background-color: #f0f8ff;
+    font-family: Arial, sans-serif; 
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+  }
+
+  header {
+    background-color: #003366;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+  }
+
+  caption {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+    text-align: center;
+    padding: 10px;
+  }
+
+  table tr:hover {
+    background-color: #f1f1f1;
+  }
+
+.box-button {
+    display: inline-block; /* Make it inline-block for margin */
+    padding: 15px 30px; /* Adjust padding for a boxy look */
+    background-color: #007bff; /* Change to your desired background color */
+    color: white; /* Text color */
+    text-decoration: none; /* Remove underline */
+    border: none; /* Remove border */
+    border-radius: 4px; /* Slightly round corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+    transition: background-color 0.3s, transform 0.3s; /* Add transitions */
+}
+
+.box-button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+    transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+.center-text {
+  text-align: center;
+  margin: 20px 0; /* Optional: adds some margin */
+}
+
+.btn {
+  padding: 10px 15px;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  color: white;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  color: white;
+}

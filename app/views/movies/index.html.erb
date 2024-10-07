@@ -2,19 +2,34 @@
 
 <% content_for :title, "Movies" %>
 
-<h1>Movies</h1>
+<header style="background-color: #003366; color: white; padding: 10px; text-align: center;">
+  RottenPotatoes
+</header>
 
-<%= link_to "New movie", new_movie_path %>
+<div style="text-align: center; margin: 20px 0;">
+  <%= link_to "Add New movie", new_movie_path, class: "btn btn-primary box-button" %>
+</div>
+
+
 
 <div id="movies">
   <% if @movies.any? %>
     <table>
       <thead>
         <tr>
-          <th>Title</th>
-          <th>Rating</th>
-          <th>Release Date</th>
-          <th>Actions</th>
+          <th>
+            <%= link_to "Title", movies_path(sort: "title", direction: sort_direction("title")) %>
+            <span><%= sort_direction("title") == "asc" ? "▲" : "▼" %></span>
+          </th>
+          <th>
+            <%= link_to "Rating", movies_path(sort: "rating", direction: sort_direction("rating")) %>
+            <span><%= sort_direction("rating") == "asc" ? "▲" : "▼" %></span>
+          </th>
+          <th>
+            <%= link_to "Release Date", movies_path(sort: "release_date", direction: sort_direction("release_date")) %>
+            <span><%= sort_direction("release_date") == "asc" ? "▲" : "▼" %></span>
+          </th>
+          <th>Description</th>
         </tr>
       </thead>
       <tbody>
@@ -23,11 +38,7 @@
             <td><%= movie.title %></td>
             <td><%= movie.rating %></td>
             <td><%= movie.release_date.strftime("%d-%b-%Y") %></td>
-            <td>
-              <%= link_to "Show", movie %> |
-              <%= link_to "Edit", edit_movie_path(movie) %> |
-              <%= link_to "Destroy", movie, method: :delete, data: { confirm: "Are you sure?" } %>
-            </td>
+            <td><%= movie.description %></td>
           </tr>
         <% end %>
       </tbody>

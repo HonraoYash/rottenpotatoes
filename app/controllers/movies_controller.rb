@@ -3,8 +3,19 @@ class MoviesController < ApplicationController
 
   # GET /movies or /movies.json
   def index
-    @movies = Movie.all
+    # Set default sorting to 'title' if none is provided
+    sort_column = params[:sort] || session[:sort] || 'title'
+    sort_direction = params[:direction] || session[:direction] || 'asc'
+
+    # Store the sort settings in the session so it is retained across requests
+    session[:sort] = sort_column
+    session[:direction] = sort_direction
+
+    # Apply sorting to the movies query
+    @movies = Movie.order("#{sort_column} #{sort_direction}")
   end
+
+ 
 
   # GET /movies/1 or /movies/1.json
   def show
@@ -67,4 +78,5 @@ class MoviesController < ApplicationController
     def movie_params
       params.require(:movie).permit(:title, :rating, :description, :release_date)
     end
+
 end
