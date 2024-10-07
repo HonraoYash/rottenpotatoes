@@ -11,5 +11,12 @@ module ApplicationHelper
         else
           "asc"
         end
+      end
+      def highlight_sort_column(column)
+        if column == session[:sort]
+          session[:direction] == 'asc' ? 'sorted-asc' : 'sorted-desc'
+        else
+          ''
+        end
       end 
 end

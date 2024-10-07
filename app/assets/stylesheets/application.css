@@ -125,3 +125,11 @@
   background-color: #dc3545;
   color: white;
 }
+
+.sorted-asc {
+  background-color: lightgreen; /* Color for ascending */
+}
+
+.sorted-desc {
+  background-color: lightcoral; /* Color for descending */
+}
