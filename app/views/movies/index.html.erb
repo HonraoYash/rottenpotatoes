@@ -30,6 +30,7 @@
             <span><%= sort_direction("release_date") == "asc" ? "▲" : "▼" %></span>
           </th>
           <th>Description</th>
+          <th>Actions</th>
         </tr>
       </thead>
       <tbody>
@@ -39,6 +40,11 @@
             <td><%= movie.rating %></td>
             <td><%= movie.release_date.strftime("%d-%b-%Y") %></td>
             <td><%= movie.description %></td>
+            <td style="white-space: nowrap;">
+              <%= link_to "Show", movie_path(movie), class: "btn btn-info btn-sm", style: "font-size: 12px; display: inline-block;"  %>
+              <%= link_to "Edit", edit_movie_path(movie), class: "btn btn-warning btn-sm", style: "font-size: 12px; display: inline-block;" %>
+              <%= link_to "Delete", movie_path(movie), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger btn-sm", style: "font-size: 12px; display: inline-block;" %>
+            </td>
           </tr>
         <% end %>
       </tbody>
